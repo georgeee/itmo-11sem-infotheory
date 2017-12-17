@@ -1,6 +1,9 @@
 # using Plots
 
 in=read("input/hw1")
+s = length(in)
+
+println("File size: ", s)
 
 R=[]
 
@@ -21,7 +24,6 @@ Hcs = 0
 for n = 1:8
   a_ = Dict()
 
-  s = length(in)
   ncombs=s-n+1
 
   for i = 1:ncombs
@@ -58,9 +60,7 @@ for n = 1:8
   hm2 = h - Hcs
   Hcs += hm2
 
-  println("n=", n, ": h_n=", hn, " h_n*s=", hn * s)
-  println("     h_m=", hm, " h_m*s=", hm * s)
-  println("     h_m2=", hm2, " h_m2*s=", hm2 * s)
+  println("| ", n, " | ", hn, " | ", hm2, " | ", length(a), " | ", hm2*s/8, " | ", hm2*s/8 + length(a)*n, " |")
 
 
   push!(R, r3)

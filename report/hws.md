@@ -11,6 +11,7 @@
 | -- | -- |
 | File | PAPER1 (Calgary) |
 | File size | 53161 bytes |
+| Variant | 8 |
 
 In following table dependence of `n`, `H_n = H(X^n)/n`, `H(X|X^n-1)` is shown:
 
@@ -52,45 +53,49 @@ Note, that header for bzip2 is approximately 14-40 bytes (so doesn't change comp
 
 ## Task 2
 
+|   |   |
+| -- | -- |
+| Variant | 8 |
+
 Matrix A for Markov chain with `s=1`: 
 
 ```
-  0.33333 0.33333 0.33333 
-  0.00000 0.50000 0.50000 
-  0.25000 0.00000 0.75000 
+  0.25000 0.75000 0.00000 
+  0.00000 0.25000 0.75000 
+  0.75000 0.00000 0.25000 
 ```
 
 Distribution `p` such that `p*A=p`:
-`p = 0.23077 0.15385 0.61538 `
+`p = 0.33333 0.33333 0.33333 `
 
 ### Entropy calculation
 
-`H(X) = 1.33468`
+`H(X) = 1.58496`
 
-`H(X|X^n) = H(X|X^s) = H(X|X) = 1.01885`
+`H(X|X^n) = H(X|X^s) = H(X|X) = 0.81128`
 
-`H_n(X) = H(X|X) + ( H(X) - H(X|X) )/n = 1.01885 + 0.31582/n`
+`H_n(X) = H(X|X) + ( H(X) - H(X|X) )/n = 0.81128 + 0.77368/n`
 
 ### Huffman lengths for X
 
 |Symbol|Probability|Length|
 | -- | -- | -- |
-| a | 0.23077 | 2 |
-| b | 0.15385 | 2 |
-| c | 0.61538 | 1 |
+| a | 0.33333 | 2 |
+| b | 0.33333 | 1 |
+| c | 0.33333 | 2 |
 
-`R_1 = 1.38462`
+`R_1 = 1.66667`
 
 ### Huffman lengths for X^2
 
 |Symbol|Probability|Length|
 | -- | -- | -- |
-| aa | 0.07692 | 4 |
-| ab | 0.07692 | 4 |
-| ac | 0.07692 | 4 |
-| bb | 0.07692 | 4 |
-| bc | 0.07692 | 3 |
-| ca | 0.15385 | 3 |
-| cc | 0.46154 | 1 |
+| aa | 0.08333 | 4 |
+| ab | 0.25000 | 4 |
+| bb | 0.08333 | 3 |
+| bc | 0.25000 | 2 |
+| ca | 0.25000 | 4 |
+| cc | 0.08333 | 4 |
 
-`R_1 = 2.38462`
+`R_1 = 3.41667`
+

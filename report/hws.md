@@ -1,12 +1,16 @@
-# Task 1
+# HW report
 
 |   |   |
 | -- | -- |
 | Performer| George Agapov |
 | Date | 2017 Dec 17 |
+
+## Task 1
+
+|   |   |
+| -- | -- |
 | File | PAPER1 (Calgary) |
 | File size | 53161 bytes |
-
 
 In following table dependence of `n`, `H_n = H(X^n)/n`, `H(X|X^n-1)` is shown:
 
@@ -45,3 +49,48 @@ which being added to estimation done with `H(X|X^n-1)` gives much worse result t
 
 
 Note, that header for bzip2 is approximately 14-40 bytes (so doesn't change comparison results).
+
+## Task 2
+
+Matrix A for Markov chain with `s=1`: 
+
+```
+  0.33333 0.33333 0.33333 
+  0.00000 0.50000 0.50000 
+  0.25000 0.00000 0.75000 
+```
+
+Distribution `p` such that `p*A=p`:
+`p = 0.23077 0.15385 0.61538 `
+
+### Entropy calculation
+
+`H(X) = 1.33468`
+
+`H(X|X^n) = H(X|X^s) = H(X|X) = 1.01885`
+
+`H_n(X) = H(X|X) + ( H(X) - H(X|X) )/n = 1.01885 + 0.31582/n`
+
+### Huffman lengths for X
+
+|Symbol|Probability|Length|
+| -- | -- | -- |
+| a | 0.23077 | 2 |
+| b | 0.15385 | 2 |
+| c | 0.61538 | 1 |
+
+`R_1 = 1.38462`
+
+### Huffman lengths for X^2
+
+|Symbol|Probability|Length|
+| -- | -- | -- |
+| aa | 0.07692 | 4 |
+| ab | 0.07692 | 4 |
+| ac | 0.07692 | 4 |
+| bb | 0.07692 | 4 |
+| bc | 0.07692 | 3 |
+| ca | 0.15385 | 3 |
+| cc | 0.46154 | 1 |
+
+`R_1 = 2.38462`

@@ -60,8 +60,7 @@ for n = 1:8
   hm2 = h - Hcs
   Hcs += hm2
 
-  println("| ", n, " | ", hn, " | ", hm2, " | ", length(a), " | ", hm2*s/8, " | ", hm2*s/8 + length(a)*n, " |")
-
+  @printf("| %d | %.3f | %.3f | %d | %.3f | %.3f |\n", n, hn, hm2, length(a), hm2*s/8, hm2*s/8 + length(a)*n)
 
   push!(R, r3)
   push!(H, h)

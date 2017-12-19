@@ -101,6 +101,10 @@ Distribution `p` such that `p*A=p`:
 
 ## Task 3
 
+|   |   |
+| -- | -- |
+| Variant | 17 |
+
 Proverb: `Better late than never but better never late.`
 
 Length: `360` bits.

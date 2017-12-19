@@ -3,7 +3,7 @@
 |   |   |
 | -- | -- |
 | Performer| George Agapov |
-| Date | 2017 Dec 17 |
+| Date | 2017 Dec 19 |
 
 ## Task 1
 

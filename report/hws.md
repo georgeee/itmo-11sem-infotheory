@@ -38,10 +38,10 @@ File was applied to different archivers:
 
 | Archiver | Result (bytes) |  Compression rate |
 | -- | -- | -- |
-| Original file | 53161 | - |
-| 7zip | 17339 | 0.67384 |
-| bzip2 | 16558 | 0.688531 |
-| gzip | 18579 |  0.650514 |
+| Original file | 53161 | 1 |
+| 7zip | 17339 | 3.06598 |
+| bzip2 | 16558 | 3.21059 |
+| gzip | 18579 |  2.86135 |
 
 So comparing to `H(X|X^n-1)` with `n > 3` archivers perform worse.
 But we also need to transfer alphabet.
@@ -493,10 +493,10 @@ Trace of encoding with algorithm PPMA, context length D=5 (result: 227 bits).
 
 |Algorithm|Size, bits|Compression ratio|
 |--|--|--|
-|Original|360|1.0|
-|Huffman|261|0.725|
-|Enumerative|244|0.6777777777777778|
-|LZ77|232|0.6444444444444445|
-|LZW|251|0.6972222222222222|
-|PPMA|226|0.6277777777777778|
-|Gzip|424|1.1777777777777778|
+| Original | 360 | 1.0000 |
+| Huffman | 261 | 1.3793 |
+| Enumerative | 244 | 1.4754 |
+| LZ77 | 232 | 1.5517 |
+| LZW | 251 | 1.4343 |
+| PPMA | 226 | 1.5929 |
+| Gzip | 424 | 0.8491 |

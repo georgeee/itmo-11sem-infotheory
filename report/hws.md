@@ -106,7 +106,7 @@ Proverb: `Better late than never but better never late.`
 Length: `360` bits.
 
 
-# Two-phase Huffman encoding
+### Two-phase Huffman encoding
 
 Code word is combined from two parts: `c(x) = c1(x) + c2(x)`:
 * `c1(x)` for alphabet encoding

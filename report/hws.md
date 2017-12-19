@@ -5,6 +5,20 @@
 | Performer| George Agapov |
 | Date | 2017 Dec 19 |
 
+  * [Task 1](#task-1)
+  * [Task 2](#task-2)
+    + [Entropy calculation](#entropy-calculation)
+    + [Huffman lengths for X](#huffman-lengths-for-x)
+    + [Huffman lengths for X^2](#huffman-lengths-for-x-2)
+  * [Task 3](#task-3)
+    + [Two-phase Huffman encoding](#two-phase-huffman-encoding)
+    + [Adaptive coding](#adaptive-coding)
+    + [Enumerative coding](#enumerative-coding)
+    + [LZ-77](#lz-77)
+    + [LZW (LZ-78)](#lzw-lz-78)
+    + [PPM](#ppm)
+    + [Comparison](#comparison)
+
 ## Task 1
 
 |   |   |

@@ -92,17 +92,17 @@ function solve(A)
   println("### Huffman lengths for X\n\n|Symbol|Probability|Length|\n| -- | -- | -- |")
   foreach(x -> @printf("| %s | %.5f | %d |\n", x[1], x[2], x[3]), huff1)
 
-  @printf("\n`R_1 = %.5f`\n\n", calcRate(huff1))
+  @printf("\n`R_1 = %.5f`\n\n", calcRate(huff1, 1))
 
   println("### Huffman lengths for X^2\n\n|Symbol|Probability|Length|\n| -- | -- | -- |")
   foreach(x -> @printf("| %s | %.5f | %d |\n", x[1], x[2], x[3]), huff2)
 
-  @printf("\n`R_1 = %.5f`\n\n", calcRate(huff2))
+  @printf("\n`R_2 = %.5f`\n\n", calcRate(huff2, 2))
 
 end
 
-function calcRate(h)
-    mapreduce(x -> x[2]*x[3], +, h)
+function calcRate(h, n)
+    mapreduce(x -> x[2]*x[3], +, h)/n
 end
 
 function findHuffman(probs)

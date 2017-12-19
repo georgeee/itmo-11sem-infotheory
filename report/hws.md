@@ -101,10 +101,6 @@ Distribution `p` such that `p*A=p`:
 
 ## Task 3
 
-|   |   |
-| -- | -- |
-| Variant | 17 |
-
 Proverb: `Better late than never but better never late.`
 
 Length: `360` bits.
@@ -273,6 +269,9 @@ Log of encoding (with algorithm A):
 
 Total length: `l = ⌈- log2 ( G ) ⌉ + 1 = 246`
 
+### Enumerative coding
+
+
 Composition: 
 `τ = (10, 8, 7, 4, 3, 3, 2, 2, 2, 1, 1, 1, 1, 0, .., 0)`
 Composition of sorted composition: `τ' = (1, 1, 1, 1, 2, 3, 4, 243)`
@@ -282,7 +281,8 @@ Costs to transfer sequential number of composition (in lexicographically ordered
 
 Costs to transfer number of byte sequence (among all with given composition):
 `l2 = 125`
-`l = l1 + l2 = 244`
+
+Total length of code: `l = l1 + l2 = 244`
 ### LZ-77
 
 We compare LZ-77 launched with various params:

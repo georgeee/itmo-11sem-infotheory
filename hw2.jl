@@ -49,7 +49,32 @@ function printMatrix(m)
   end
 end
 
-function solve(A)
+function calcRate(h, n)
+    mapreduce(x -> x[2]*x[3], +, h)/n
+end
+
+function findHuffman(probs)
+  probs=filter(x -> abs(x[1]) > eps, collect(probs))
+  probs=map(x -> (x[1], 0, x[2]), probs)
+  res=[]
+  while length(probs) > 1
+    sort!(probs, rev=true)
+    a = pop!(probs)
+    b = pop!(probs)
+    h=max(a[2], b[2])
+    if(a[2] == 0)
+      push!(res, (a[1], h, a[3]))
+    end
+    if(b[2] == 0)
+      push!(res, (b[1], h, b[3]))
+    end
+    push!(probs, (a[1]+b[1], h+1, ""))
+  end
+  h=first(probs)[2]
+  sort(map(x -> (x[3], x[1], h-x[2]), res))
+end
+
+function solve_hw2(A)
   p = find_p(A)
   if typeof(p) == Void
     println("No p found")
@@ -101,27 +126,3 @@ function solve(A)
 
 end
 
-function calcRate(h, n)
-    mapreduce(x -> x[2]*x[3], +, h)/n
-end
-
-function findHuffman(probs)
-  probs=filter(x -> abs(x[1]) > eps, collect(probs))
-  probs=map(x -> (x[1], 0, x[2]), probs)
-  res=[]
-  while length(probs) > 1
-    sort!(probs, rev=true)
-    a = pop!(probs)
-    b = pop!(probs)
-    h=max(a[2], b[2])
-    if(a[2] == 0)
-      push!(res, (a[1], h, a[3]))
-    end
-    if(b[2] == 0)
-      push!(res, (b[1], h, b[3]))
-    end
-    push!(probs, (a[1]+b[1], h+1, ""))
-  end
-  h=first(probs)[2]
-  sort(map(x -> (x[3], x[1], h-x[2]), res))
-end

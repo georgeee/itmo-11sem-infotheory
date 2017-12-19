@@ -125,7 +125,7 @@ huffman input = encode 0 []
     table1 = M.fromList $ map (\(c,s) -> (c,(s,firstPass M.! c))) codeWords
 
 runHuffman x = do
-    putStr (("# Two-phase Huffman encoding\n\n"
+    putStr (("### Two-phase Huffman encoding\n\n"
              <> "Code word is combined from two parts: `c(x) = c1(x) + c2(x)`:\n"
              <> "* `c1(x)` for alphabet encoding\n"
              <> "* `c2(x)` for data sequence\n\n"

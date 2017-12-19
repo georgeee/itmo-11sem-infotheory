@@ -9,7 +9,7 @@
   * [Task 2](#task-2)
     + [Entropy calculation](#entropy-calculation)
     + [Huffman lengths for X](#huffman-lengths-for-x)
-    + [Huffman lengths for X^2](#huffman-lengths-for-x-2)
+    + [Huffman lengths for X^2](#huffman-lengths-for-x2)
   * [Task 3](#task-3)
     + [Two-phase Huffman encoding](#two-phase-huffman-encoding)
     + [Adaptive coding](#adaptive-coding)

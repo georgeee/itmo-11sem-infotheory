@@ -53,25 +53,35 @@ function calcRate(h, n)
     mapreduce(x -> x[2]*x[3], +, h)/n
 end
 
-function findHuffman(probs)
-  probs=filter(x -> abs(x[1]) > eps, collect(probs))
-  probs=map(x -> (x[1], 0, x[2]), probs)
-  res=[]
+function findHuffman(probs_)
+  probs_=filter(x -> abs(x[1]) > eps, collect(probs_))
+  n=length(probs_)
+  parent=Array{Int32}(n*2-2)
+  probs=[]
+  for i=1:n
+    push!(probs, (probs_[i][1], i))
+  end
+  pair_id=1+n
   while length(probs) > 1
     sort!(probs, rev=true)
     a = pop!(probs)
     b = pop!(probs)
-    h=max(a[2], b[2])
-    if(a[2] == 0)
-      push!(res, (a[1], h, a[3]))
-    end
-    if(b[2] == 0)
-      push!(res, (b[1], h, b[3]))
-    end
-    push!(probs, (a[1]+b[1], h+1, ""))
+    parent[a[2]]=pair_id
+    parent[b[2]]=pair_id
+    push!(probs, (a[1]+b[1], pair_id))
+    pair_id=pair_id+1
   end
-  h=first(probs)[2]
-  sort(map(x -> (x[3], x[1], h-x[2]), res))
+  depth=Array{Int32}(2*n-1)
+  depth[2*n-1]=0
+  for j=1:n*2-2
+    i=n*2-2-j+1
+    depth[i]=depth[parent[i]]+1
+  end
+  res=[]
+  for i=1:n
+    push!(res, (probs_[i][2], probs_[i][1], depth[i]))
+  end
+  sort(res)
 end
 
 function solve_hw2(A)
@@ -124,5 +134,6 @@ function solve_hw2(A)
 
   @printf("\n`R_2 = %.5f`\n\n", calcRate(huff2, 2))
 
+  huff1, huff2
 end
 

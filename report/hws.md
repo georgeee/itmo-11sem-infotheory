@@ -105,13 +105,24 @@ Distribution `p` such that `p*A=p`:
 |Symbol|Probability|Length|
 | -- | -- | -- |
 | aa | 0.08333 | 4 |
-| ab | 0.25000 | 4 |
+| ab | 0.25000 | 2 |
 | bb | 0.08333 | 3 |
 | bc | 0.25000 | 2 |
-| ca | 0.25000 | 4 |
+| ca | 0.25000 | 2 |
 | cc | 0.08333 | 4 |
 
-`R_2 = 1.70833`
+`R_2 = 1.20833`
+
+### Better coding for X
+
+Target rate is `H(X|X^n) = H(X|X^s) = H(X|X) = 0.81128`
+
+Can we get closer to it?
+
+It's easy to achieve `R = 1`:
+
+1) we transmit first symbol of sequence with 2 bits
+2) each following symbol we transmit with one bit. This is possible because at any point once we know we received symbol `X`, we know that there are only two possibilities: `Y` or `Z` (this is a consequence of `A` matrix contain zero in each row).
 
 ## Task 3
 
